@@ -12,8 +12,9 @@ function numOfLangs(countriesData){
   countries.forEach((country) => {
     let lang = country.languages
     lang.forEach((name) =>{
-      let { name : x } = name;
+      let x = name.name;
       if(!newArr.includes(x)){
+          newArr.push(x)
     }
     })
   })
@@ -31,11 +32,10 @@ function numOfLangs(countriesData){
 function numOfLangs(countriesData){
   const counts = {};
   let countries = countriesData;
-  let newArr = []
   countries.forEach((country) => {
     let lang = country.languages
     lang.forEach((name) =>{
-      let { name : x } = name;
+     let x = name.name
       counts[x] = (counts[x] || 0) + 1;      
     })
 
@@ -45,3 +45,23 @@ function numOfLangs(countriesData){
   console.log(sorted.slice(0,15))
 }
 
+fetch('https://restcountries.com/v2/all')
+.then(response => response.json())
+.then((data) => {
+  numOfLangs(data)
+    })
+.catch(err => console.log('err',err))
+
+
+function numOfLangs(countriesData){
+let x = []
+let countries = countriesData;
+countries.forEach((country)=>{
+  if(country.area){
+  x.push([country.name,country.area])
+  }
+})
+let sort = x.sort(function(a, b) {
+  return b[1] - a[1];}).splice(0,10)
+console.log(sort)
+}
