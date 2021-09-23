@@ -20,7 +20,7 @@ function numOfLangs(countriesData){
   console.log(newArr.length)
 }
 
-fetch('https://restcountries.com/v2/all')
+  fetch('https://restcountries.com/v2/all')
   .then(response => response.json())
   .then((data) => {
     numOfLangs(data)
@@ -29,7 +29,7 @@ fetch('https://restcountries.com/v2/all')
 
 
 function numOfLangs(countriesData){
-  const counts = {name};
+  const counts = {};
   let countries = countriesData;
   let newArr = []
   countries.forEach((country) => {
@@ -40,6 +40,8 @@ function numOfLangs(countriesData){
     })
 
   })
-
-  console.log(counts)
+  let entries = Object.entries(counts);
+  let sorted = entries.sort((a, b) => b[1] - a[1]);
+  console.log(sorted.slice(0,15))
 }
+

@@ -49,8 +49,12 @@
 
 2. Explain the following questions in your own words
 
-What is the difference between forEach, map, filter and reduce ? Explain these using your own words
-Explain the difference between function declaration and arrow function ?
-Explain the difference between find and findIndex ?
-If you like to filter out one object element in an array which method do you like to use: filter or find ? Explain
-Explain the difference of var, let and const when we declare a variable ?
+What is the difference between forEach, map, filter and reduce ? Explain these using your own words // forEach = The forEach method passes a callback function for each element of an array map = This method takes in a callback function which gets called for every new element it iterates over. filter = The filter method takes in a callback function and calls that function for every item it iterates over inside the target array.
+
+Explain the difference between function declaration and arrow function ? // Function declaration = function doSomething() {},Function declarations are hoisted,The function declaration (function statement) defines a function with the specified parameters. Arrow Fuction = ()=>doSomething, Arrow functions intend to fix the problem where we need to access a property of this inside a callback,it does not bind its own this.
+
+Explain the difference between find and findIndex ? // Find = find() method returns the value of the first element in an array that passes a given test. FindIndex = findIndex() returns the index of the first element in the array that satisfies the given test.
+
+If you like to filter out one object element in an array which method do you like to use: filter or find ? Explain // Both are good.
+
+Explain the difference of var, let and const when we declare a variable ? // var = variables are function-scoped because their visibility is limited to the function. When you try to use it outside of the function, you’ll get an error. let = Same as var but block scope const = Const variables are cannot be updated or redeclared.
